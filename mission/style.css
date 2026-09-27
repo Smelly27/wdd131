@@ -1,3 +1,4 @@
+
 body {
     font-family: "Times New Roman", Times, serif;
     background-color: white;
@@ -53,4 +54,25 @@ footer {
 
 footer img {
     width: 150px;
+}
+
+/* Theme selector */
+#theme-selector {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 5px;
+}
+
+/* Dark mode */
+.dark {
+    background-color: #333;
+    color: white;
+}
+
+.dark .content {
+    border-color: #777;
+}
+
+.dark h2 {
+    color: #9bd5ff;
 }

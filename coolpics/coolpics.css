@@ -1,15 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #eeeeee;
 }
 
 header {
-    background-color: #52489c;
+    background-color: #2B80D8;
     color: white;
     text-align: center;
     padding: 20px;
@@ -18,18 +21,28 @@ header {
 h1 {
     margin: 0 0 15px;
     font-size: 2.5rem;
+    font-weight: 400;
 }
 
 .menu {
     background: none;
     border: none;
     color: white;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
+    font-weight: 400;
     text-decoration: underline;
     cursor: pointer;
 }
 
+/* Mobile navigation */
 nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav.hide {
     display: none;
 }
 
@@ -37,8 +50,14 @@ nav a {
     color: white;
     padding: 10px;
     font-size: 1.1rem;
+    font-weight: 400;
 }
 
+nav a:hover {
+    text-decoration: none;
+}
+
+/* Main content */
 main {
     max-width: 1100px;
     margin: 0 auto;
@@ -48,8 +67,10 @@ main {
 h2 {
     text-align: center;
     font-size: 2rem;
+    font-weight: 500;
 }
 
+/* Photo gallery */
 .gallery {
     display: grid;
     grid-template-columns: 1fr;
@@ -60,32 +81,77 @@ h2 {
 .gallery img {
     width: 300px;
     height: 300px;
+    max-width: 100%;
     object-fit: cover;
     border: 5px solid white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
-footer {
+/* Image modal */
+.image-modal {
+    border: none;
+    padding: 0;
+    background-color: white;
+    max-width: 90vw;
+    max-height: 90vh;
+    position: relative;
+}
+
+.image-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.image-modal img {
+    display: block;
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.close-viewer {
+    position: absolute;
+    top: 5px;
+    right: 5px;
     background-color: #52489c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #2B80D8;
     color: white;
     text-align: center;
     padding: 15px;
     margin-top: 20px;
+    font-weight: 400;
 }
 
+/* Tablet layout */
 @media screen and (min-width: 700px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Desktop layout */
 @media screen and (min-width: 1000px) {
     .menu {
         display: none;
     }
 
-    nav {
+    nav,
+    nav.hide {
         display: flex;
+        flex-direction: row;
         justify-content: center;
         gap: 30px;
     }

@@ -15,7 +15,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: #333;
-    background-color: #fff;
+    background-color: white;
 }
 
 /* Header */
@@ -26,8 +26,8 @@ header {
 
 h1 {
     font-family: 'Lora', Georgia, serif;
-    font-size: 2.5rem;
     color: var(--primary-color);
+    font-size: 2.5rem;
     margin: 40px 0;
 }
 
@@ -36,7 +36,7 @@ h1 {
 nav {
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
-    padding: 15px 30px;
+    padding: 15px 40px;
 }
 
 nav ul {
@@ -65,15 +65,24 @@ nav a:focus-visible {
     outline-offset: 4px;
 }
 
-/* Main Grid Layout */
+/* Main Page Grid */
 
 main {
     display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(200px, 1fr);
-    gap: 30px;
-    max-width: 1200px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+    width: 100%;
+    max-width: 1100px;
     margin: 35px auto;
-    padding: 0 20px;
+    padding: 0 25px;
+    align-items: start;
+}
+
+/* Reviews Section */
+
+.reviews {
+    width: 100%;
+    min-width: 0;
 }
 
 /* Book Review Grid */
@@ -82,7 +91,7 @@ main {
     display: grid;
     grid-template-columns: 180px minmax(0, 1fr);
     gap: 25px;
-    margin-bottom: 40px;
+    width: 100%;
 }
 
 /* Book Information */
@@ -109,11 +118,15 @@ main {
 
 /* Book Content */
 
+.book-content {
+    min-width: 0;
+}
+
 .book-content h2 {
     font-family: 'Lora', Georgia, serif;
     color: var(--accent-color);
     font-size: 1.7rem;
-    margin-top: 0;
+    margin: 0 0 20px;
 }
 
 .book-content img {
@@ -126,19 +139,29 @@ main {
 
 .book-content p {
     line-height: 1.6;
+    margin-top: 20px;
 }
 
-/* Filters Sidebar */
+/* Filters - Always Below Book Review */
 
 .filters {
+    grid-column: 1;
+    width: 100%;
+    min-height: auto;
     border: 1px solid var(--border-color);
     padding: 20px;
-    min-height: 350px;
+    margin-top: 10px;
 }
 
 .filters h2 {
     font-family: 'Lora', Georgia, serif;
     color: var(--primary-color);
+    margin: 0 0 15px;
+}
+
+.filters p {
+    margin: 0;
+    line-height: 1.6;
 }
 
 /* Footer */
@@ -154,20 +177,25 @@ footer {
 
 @media screen and (max-width: 900px) {
     main {
-        grid-template-columns: 1fr;
+        padding: 0 25px;
     }
 
-    .filters {
-        min-height: 150px;
+    .book-review {
+        grid-template-columns: 150px minmax(0, 1fr);
+        gap: 20px;
     }
 }
 
 /* Mobile Layout */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     h1 {
         font-size: 2rem;
         margin: 25px 0;
+    }
+
+    nav {
+        padding: 15px;
     }
 
     nav ul {
@@ -180,19 +208,21 @@ footer {
     }
 
     main {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
         padding: 0 15px;
         margin-top: 25px;
     }
 
     .book-review {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 15px;
     }
 
     .book-info {
         text-align: right;
         border-right: none;
-        border-bottom: none;
+        border-bottom: 1px solid var(--border-color);
         padding: 0 0 15px;
     }
 
@@ -200,7 +230,35 @@ footer {
         font-size: 1.5rem;
     }
 
+    .book-content img {
+        width: 200px;
+        max-width: 100%;
+        height: auto;
+    }
+
     .filters {
-        min-height: auto;
+        grid-column: 1;
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/* Small Phone Layout */
+
+@media screen and (max-width: 380px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+
+    .book-content h2 {
+        font-size: 1.3rem;
     }
 }

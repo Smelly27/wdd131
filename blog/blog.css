@@ -1,0 +1,206 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #473144;
+    --accent-color: #AF1B3F;
+    --border-color: #EFC69B;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header */
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin: 40px 0;
+}
+
+/* Navigation */
+
+nav {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 30px;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: end;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    text-decoration: underline;
+}
+
+nav a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+/* Main Grid Layout */
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(200px, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+/* Book Review Grid */
+
+.book-review {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Book Information */
+
+.book-info {
+    text-align: right;
+    border-right: 1px solid var(--border-color);
+    padding-right: 20px;
+}
+
+.book-info p {
+    margin: 8px 0;
+}
+
+.book-info .date {
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.rating {
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+/* Book Content */
+
+.book-content h2 {
+    font-family: 'Lora', Georgia, serif;
+    color: var(--accent-color);
+    font-size: 1.7rem;
+    margin-top: 0;
+}
+
+.book-content img {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+}
+
+.book-content p {
+    line-height: 1.6;
+}
+
+/* Filters Sidebar */
+
+.filters {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    min-height: 350px;
+}
+
+.filters h2 {
+    font-family: 'Lora', Georgia, serif;
+    color: var(--primary-color);
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--primary-color);
+}
+
+/* Tablet Layout */
+
+@media screen and (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        min-height: 150px;
+    }
+}
+
+/* Mobile Layout */
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+        margin: 25px 0;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 0 15px;
+        margin-top: 25px;
+    }
+
+    .book-review {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .book-info {
+        text-align: right;
+        border-right: none;
+        border-bottom: none;
+        padding: 0 0 15px;
+    }
+
+    .book-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .filters {
+        min-height: auto;
+    }
+}

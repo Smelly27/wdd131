@@ -28,7 +28,7 @@ h1 {
     font-family: 'Lora', Georgia, serif;
     color: var(--primary-color);
     font-size: 2.5rem;
-    margin: 40px 0;
+    margin: 35px 0;
 }
 
 /* Navigation */
@@ -65,7 +65,7 @@ nav a:focus-visible {
     outline-offset: 4px;
 }
 
-/* Main Page Grid */
+/* Main Layout */
 
 main {
     display: grid;
@@ -85,13 +85,14 @@ main {
     min-width: 0;
 }
 
-/* Book Review Grid */
+/* Individual Book Review */
 
 .book-review {
     display: grid;
     grid-template-columns: 180px minmax(0, 1fr);
     gap: 25px;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 /* Book Information */
@@ -109,10 +110,11 @@ main {
 .book-info .date {
     font-size: 1.15rem;
     font-weight: bold;
+    font-style: italic;
 }
 
 .rating {
-    color: var(--accent-color);
+    color: #d99a00;
     letter-spacing: 2px;
 }
 
@@ -126,7 +128,7 @@ main {
     font-family: 'Lora', Georgia, serif;
     color: var(--accent-color);
     font-size: 1.7rem;
-    margin: 0 0 20px;
+    margin: 10px 0 20px;
 }
 
 .book-content img {
@@ -142,12 +144,11 @@ main {
     margin-top: 20px;
 }
 
-/* Filters - Always Below Book Review */
+/* Filters */
 
 .filters {
     grid-column: 1;
     width: 100%;
-    min-height: auto;
     border: 1px solid var(--border-color);
     padding: 20px;
     margin-top: 10px;
@@ -217,6 +218,7 @@ footer {
     .book-review {
         grid-template-columns: minmax(0, 1fr);
         gap: 15px;
+        margin-bottom: 40px;
     }
 
     .book-info {
@@ -238,7 +240,6 @@ footer {
 
     .filters {
         grid-column: 1;
-        width: 100%;
         margin-top: 0;
     }
 }
